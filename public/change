@@ -1,0 +1,81 @@
+sw.js:importScripts("/scram/scramjet.shared.js", "/scram/scramjet.worker.js");
+sw.js:const scramjet = new ScramjetServiceWorker();
+sw.js:	await scramjet.loadConfig();
+sw.js:	if (scramjet.route(event)) {
+sw.js:		const response = await scramjet.fetch(event);
+sw.js:scramjet.addEventListener("request", (e) => {
+embed.html:    <link rel="prefetch" href="/scram/scramjet.worker.js" />
+embed.html:    <link rel="prefetch" href="/scram/scramjet.shared.js" />
+embed.html:    <script src="/scram/scramjet.controller.js"></script>
+embed.html:      const scramjet = new ScramjetController({
+embed.html:          wasm: "/scram/scramjet.wasm.wasm",
+embed.html:          worker: "/scram/scramjet.worker.js",
+embed.html:          client: "/scram/scramjet.client.js",
+embed.html:          shared: "/scram/scramjet.shared.js",
+embed.html:          sync: "/scram/scramjet.sync.js",
+embed.html:      scramjet.init();
+embed.html:          const frame = scramjet.createFrame();
+embed.html:          const frame = scramjet.createFrame();
+newpage.html:            <input id="scram-search-engine" value="https://duckduckgo.com/?q=%s" type="hidden" />
+newpage.html:        <a href="/scramjet/https%3A%2F%2Fduckduckgo.com%2F%3Fq%3Dtiktok.com" style="display: inline-block;">
+newpage.html:        <a href="/scramjet/https%3A%2F%2Fduckduckgo.com%2F%3Fq%3Dtwitch.tv" style="display: inline-block;">
+newpage.html:        <a href="/scramjet/https%3A%2F%2Fduckduckgo.com%2F%3Fq%3Dgoogle.com" style="display: inline-block;">
+newpage.html:        <a href="/scramjet/https%3A%2F%2Fduckduckgo.com%2F%3Fq%3Dnow.gg" style="display: inline-block;">
+newpage.html:    <script src="/scram/scramjet.controller.js"></script>
+newpage.html:        const scramjet = new ScramjetController({
+newpage.html:                wasm: "/scram/scramjet.wasm.wasm",
+newpage.html:                worker: "/scram/scramjet.worker.js",
+newpage.html:                client: "/scram/scramjet.client.js",
+newpage.html:                shared: "/scram/scramjet.shared.js",
+newpage.html:                sync: "/scram/scramjet.sync.js",
+newpage.html:        scramjet.init();
+newpage.html:            const encodedUrl = scramjet.encodeUrl(url);
+newpage.html:            const cleanEncodedUrl = encodedUrl.replace(/^\/scramjet\//, '');
+newpage.html:            newPin.href = `/scramjet/${cleanEncodedUrl}`;
+newpage.html:                const encodedUrl = scramjet.encodeUrl(url);
+newpage.html:                const cleanEncodedUrl = encodedUrl.replace(/^\/scramjet\//, '');
+newpage.html:                window.location.href = `${baseUrl}/scramjet/${cleanEncodedUrl}`;
+search.html:  <link rel="prefetch" href="/scram/scramjet.worker.js" />
+search.html:  <link rel="prefetch" href="/scram/scramjet.shared.js" />
+search.html:  <script src="/scram/scramjet.controller.js"></script>
+search.html:    const scramjet = new ScramjetController({
+search.html:        wasm: "/scram/scramjet.wasm.wasm",
+search.html:        worker: "/scram/scramjet.worker.js",
+search.html:        client: "/scram/scramjet.client.js",
+search.html:        shared: "/scram/scramjet.shared.js",
+search.html:        sync: "/scram/scramjet.sync.js",
+search.html:    scramjet.init();
+search.html:      const frame = scramjet.createFrame();
+search.html:      constructor(scramjet, store) {
+search.html:        this.scramjet = scramjet;
+search.html:              <button onclick="window.open(scramjet.encodeUrl(getActiveTab()?.url))" title="Open in new window"><i class="fas fa-arrow-up-right-from-square"></i></button>
+search.html:      const search = new Search(scramjet, store);
+search.html:          await fetch("/assets/scramjet.png")
+search2.html:  <link rel="prefetch" href="/scram/scramjet.worker.js" />
+search2.html:  <link rel="prefetch" href="/scram/scramjet.shared.js" />
+search2.html:  <script src="/scram/scramjet.controller.js"></script>
+search2.html:    const scramjet = new ScramjetController({
+search2.html:        wasm: "/scram/scramjet.wasm.wasm",
+search2.html:        client: "/scram/scramjet.client.js",
+search2.html:        shared: "/scram/scramjet.shared.js",
+search2.html:        sync: "/scram/scramjet.sync.js",
+search2.html:    scramjet.init();
+search2.html:      const frame = scramjet.createFrame();
+search2.html:      constructor(scramjet, store) {
+search2.html:        this.scramjet = scramjet;
+search2.html:              <button onclick="window.open(scramjet.encodeUrl(getActiveTab()?.url))" title="Open in new window"><i class="fas fa-arrow-up-right-from-square"></i></button>
+search2.html:      const search = new Search(scramjet, store);
+search2.html:          await fetch("/assets/scramjet.png")
+static/prox/main.html:  <link rel="prefetch" href="/scram/scramjet.worker.js" />
+static/prox/main.html:  <link rel="prefetch" href="/scram/scramjet.shared.js" />
+static/prox/main.html:  <script src="/scram/scramjet.controller.js"></script>
+static/prox/main.html:    const scramjet = new ScramjetController({
+static/prox/main.html:        wasm: "/scram/scramjet.wasm.wasm",
+static/prox/main.html:        worker: "/scram/scramjet.worker.js",
+static/prox/main.html:        client: "/scram/scramjet.client.js",
+static/prox/main.html:        shared: "/scram/scramjet.shared.js",
+static/prox/main.html:        sync: "/scram/scramjet.sync.js",
+static/prox/main.html:    scramjet.init();
+static/prox/main.html:      const frame = scramjet.createFrame();
+static/prox/main.html:              <button onclick="window.open(scramjet.encodeUrl(getActiveTab()?.url))"><i class="fa-regular fa-arrow-up-right-from-square"></i></button>
+static/prox/main.html:          await fetch("/assets/scramjet.png")

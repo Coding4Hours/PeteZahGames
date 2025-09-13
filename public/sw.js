@@ -7,12 +7,16 @@ if (navigator.userAgent.includes("Firefox")) {
 	});
 }
 
-importScripts("/scram/scramjet.shared.js", "/scram/scramjet.worker.js");
+importScripts("/scram/scramjet.all.js");
 
-const scramjet = new ScramjetServiceWorker();
+
+const { scramjetserviceworker } = $scramjetloadworker();
+const scramjet = new scramjetserviceworker();
+(async function () {
+	await scramjet.loadconfig();
+})();
 
 async function handleRequest(event) {
-	await scramjet.loadConfig();
 	if (scramjet.route(event)) {
 		const response = await scramjet.fetch(event);
 

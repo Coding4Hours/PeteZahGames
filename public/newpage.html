@@ -297,13 +297,13 @@
     <div id="time"></div>
     <script src="https://cdn.jsdelivr.net/npm/dreamland"></script>
     <script src="/baremux/index.js"></script>
-    <script src="/scram/scramjet.controller.js"></script>
+    <script src="/scram/scramjet.all.js"></script>
     <script src="config.js"></script>
     <script>
         const phrases = [
             "PeteZah best unblocked games site!",
             "https://petezahgames.com",
-            "Credits to Brunys and Voucan for proxy help",
+            "Credits to Brunys and Voucan and Coding4Hours for proxy help",
             "just had a major update ¯\\_(ツ)_/¯",
             "Roblox should now work my fellow pizzas",
             "IVE EDGED TO Pete Zah -idkiguess",
@@ -329,16 +329,26 @@
         const addBtn = document.getElementById('add-btn');
         const cancelBtn = document.getElementById('cancel-btn');
         const pinnedIcons = document.querySelector('.pinned-icons');
-        const scramjet = new ScramjetController({
-            files: {
-                wasm: "/scram/scramjet.wasm.wasm",
-                worker: "/scram/scramjet.worker.js",
-                client: "/scram/scramjet.client.js",
-                shared: "/scram/scramjet.shared.js",
-                sync: "/scram/scramjet.sync.js",
-            },
-        });
-        scramjet.init();
+
+				const { ScramjetController } = $scramjetLoadController();
+				const scramjet = new ScramjetController({
+					files: {
+						wasm: "/scram/scramjet.wasm.wasm",
+						all: "/scram/scramjet.all.js",
+						sync: "/scram/scramjet.sync.js",
+					},
+					flags: {
+						rewriterLogs: false,
+						scramitize: false,
+						cleanErrors: true,
+					},
+					siteFlags: {
+						"https://worker-playground.glitch.me/.*": {
+							serviceworkers: true,
+						},
+					},
+				});
+				scramjet.init();
         function loadSavedPins() {
             const savedPins = JSON.parse(localStorage.getItem('pinnedBookmarks') || '[]');
             savedPins.forEach(pin => {
